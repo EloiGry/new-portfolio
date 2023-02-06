@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState , useRef} from 'react';
 import { RiMenuAddLine } from 'react-icons/ri'
 import { IoIosCloseCircleOutline } from 'react-icons/io'
 import Container from './Container';
@@ -8,6 +8,7 @@ import { useRouter } from 'next/router';
 import en from '@/locales/en';
 import fr from '@/locales/fr';
 import { Tab } from '@headlessui/react';
+import useOutsideClick from '@/utils/useOutsideClick';
 
 export default function NavBar() {
     const router = useRouter();
@@ -45,8 +46,11 @@ export default function NavBar() {
         router.push(router.pathname, router.asPath, { locale });
     }
 
-
     const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+    const ref = useRef()
+    useOutsideClick(ref, () => isMenuOpen && setIsMenuOpen(false));
+
     const variants = {
         open: {
             opacity: 1, x: 0, transition: {
@@ -66,7 +70,7 @@ export default function NavBar() {
 
     return (
         <div className='sticky top-0 z-50 bg-blue'>
-            <Container>
+            <Container >
 
                 <motion.div className='flex items-center justify-between h-[70px] md:hidden' animate={!isMenuOpen ? "open" : "closed"}
                     variants={variants}>
@@ -98,11 +102,11 @@ export default function NavBar() {
                 </div>
             </Container>
             {isMenuOpen &&
-                <div className='bg-blue text-white z-10 absolute top-[65px] w-full divide-y divide-white flex flex-col border-b border-b-white md:hidden'>
+                <div ref={ref} className='bg-blue text-white z-10 absolute top-[65px] w-full divide-y divide-white flex flex-col border-b border-b-white md:hidden'>
                     <Link href='#services' className='p-8 border-t border-t-white hover:text-orange duration-300'> {t.navItem1} </Link>
                     <Link href='#references' className='p-8 hover:text-orange duration-300'> {t.navItem2} </Link>
                     <Link href='#contact' className='p-8 hover:text-orange duration-300'> {t.navItem3} </Link>
-                    <Tab.Group>
+                    <Tab.Group >
                         <Tab.List className="p-8 flex justify-between">
                             <Tab onClick={() => changeLanguageMobile('en')} className={() => classNames("flag text-white hover:text-orange duration-300", locale === 'en' && 'border-b-4 border-orange')}>
                                 UK - 🇬🇧
