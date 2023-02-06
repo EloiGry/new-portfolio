@@ -11,7 +11,7 @@ export default function MainSection() {
     const t = locale === 'en' ? en : fr;
     return (
         <Container>
-            <div className='text-center py-4 md:py-6 h-[calc(100vh-70px)] flex flex-col lg:flex-row items-center justify-around'>
+            <div id='top' className='text-center py-4 md:py-6 h-[calc(100vh-70px)] flex flex-col lg:flex-row items-center justify-around'>
                 <div>
                     <h1 className='text-xl font-TitleFont md:text-4xl'> {t.mainTitle} 👋</h1>
                     <ul className='my-10 md:my-20 font-TitleFont md:text-2xl'>
