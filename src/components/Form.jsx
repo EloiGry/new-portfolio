@@ -43,7 +43,7 @@ const Form = ({ setForm, form }) => {
                 <ModalContact setIsOpen={setIsOpen} isOpen={isOpen} />) :
                 (
                     <Transition appear show={form} as={Fragment}>
-                        <Dialog as="div" className="relative z-10" onClose={() => setForm(false)}>
+                        <Dialog as="div" className="relative z-60" onClose={() => setForm(false)}>
                             <Transition.Child
                                 as={Fragment}
                                 enter="ease-out duration-300"
