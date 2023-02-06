@@ -1,6 +1,6 @@
-import { NextResponse } from 'next/server';
+import { NextResponse } from 'next/server'
 
-const PUBLIC_FILE = /\.(.*)$/;
+const PUBLIC_FILE = /\.(.*)$/
 
 export async function middleware(req) {
   if (
@@ -8,12 +8,14 @@ export async function middleware(req) {
     req.nextUrl.pathname.includes('/api/') ||
     PUBLIC_FILE.test(req.nextUrl.pathname)
   ) {
-    return;
+    return
   }
 
   if (req.nextUrl.locale === 'default') {
+    const locale = req.cookies.get('NEXT_LOCALE')?.value || 'fr'
+
     return NextResponse.redirect(
-      new URL(`/fr${req.nextUrl.pathname}`, req.url)
-    );
+      new URL(`/${locale}${req.nextUrl.pathname}${req.nextUrl.search}`, req.url)
+    )
   }
 }
