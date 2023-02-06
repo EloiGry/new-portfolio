@@ -10,7 +10,8 @@ const nextConfig = {
   i18n : {
     locales : ['fr', 'en'],
     defaultLocale: 'fr'
-  }
+  },
+  outputFileTracing: true,
 }
 
 module.exports = nextConfig
