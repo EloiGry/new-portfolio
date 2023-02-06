@@ -12,7 +12,7 @@ const nextConfig = {
     defaultLocale: 'fr'
   },
   outputFileTracing: true,
-  localePath: path.resolve('./public/locales')
+  localePath: path.resolve('./public/src/locale')
 }
 
 module.exports = nextConfig
