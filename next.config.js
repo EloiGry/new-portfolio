@@ -10,8 +10,9 @@ const nextConfig = {
   //   return config;
   // },
   i18n : {
-    locales : ['fr', 'en'],
-    defaultLocale: 'fr'
+    locales: ['default', 'fr', 'en'],
+    defaultLocale: 'default',
+    localeDetection: false,
   },
   trailingSlash: true,
 }
