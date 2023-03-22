@@ -16,7 +16,7 @@ export default function ServicesSection() {
 
 
     return (
-        <div id='services' className="bg-[url('../../public/Blob5.svg')] pb-6" >
+        <div id='services' className="bg-[url('../../public/Blob5.svg')] bg-center bg-cover bg-no-repeat pb-6" >
             <Container>
                 <h2 className="font-TitleFont text-xl py-6"> Services </h2>
                 <EntryEffect>
