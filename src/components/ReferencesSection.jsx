@@ -23,15 +23,15 @@ export default function ReferencesSection() {
     const { locale } = router;
     const t = locale === 'en' ? en : fr;
     const data = [
-        { img: Tikitup, link: "https://www.tikitup.net/"}, 
-        { img: Kelvin, link: "https://285kelvin.com/" }, 
-        { img: Gem, link: "https://www.gem-formation.com/"}, 
-        { img: Gadiamb, link: "https://gadiamb.utile.co/"}, 
-        { img: Pharmony, link: "https://pharmony.fr/"}, 
-        { img: AaZebre, link: "https://de-a-a-zebre.fr/"}, 
-        { img: BitCapital, link: "https://bitcapitals.io/"}, 
-        { img: Ieko, link: "https://ieko.io/"}, 
-        { img: Token, link: "https://tokenfit.io/en/tokenfit-home-english/" }, 
+        { img: Tikitup, link: "https://www.tikitup.net/", alt: "Tikitup Website"}, 
+        { img: Kelvin, link: "https://285kelvin.com/", alt: "285Kelvin Website" }, 
+        { img: Gem, link: "https://www.gem-formation.com/", alt: "GemFormation Website"}, 
+        { img: Gadiamb, link: "https://gadiamb.utile.co/", alt: "Gadiamb Website"}, 
+        { img: Pharmony, link: "https://pharmony.fr/", alt: "Pharmony Website"}, 
+        { img: AaZebre, link: "https://de-a-a-zebre.fr/", alt: "A à Zèbre Website"}, 
+        { img: BitCapital, link: "https://bitcapitals.io/", alt: "BitCapitals Website"}, 
+        { img: Ieko, link: "https://ieko.io/", alt: "Ieko Website"}, 
+        { img: Token, link: "https://tokenfit.io/en/tokenfit-home-english/", alt: "TokenFit Website" }, 
     ]
     return (
         <div id='references' className="bg-[url('../../public/BlobD.svg')] bg-no-repeat bg-cover bg-bottom md:bg-bottom pb-6 md:pb-12 lg:pb-20">
@@ -41,7 +41,7 @@ export default function ReferencesSection() {
                     {data.map((element) => {
                         return (
                             <Link key={element.link} href={element.link} target='_blank' className="lg:w-1/4 h-auto shadow-xl rounded-xl hover:scale-105 ease-out duration-700 my-6 md:mx-8">
-                                <Image src={element.img} placeholder='blur' height='auto' className='rounded-xl' />
+                                <Image src={element.img} placeholder='blur' height='auto' className='rounded-xl' alt={element.alt}/>
                             </Link>
                         )
                     })}

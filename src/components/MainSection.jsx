@@ -21,7 +21,7 @@ export default function MainSection() {
                     </ul>
                     <p className='text-lg md:text-2xl'> {t.mainP} </p>
                 </div>
-                <Image src='MainImage.svg' height={400} width={400} />
+                <Image src='MainImage.svg' height={400} width={400} alt="mainImage"/>
             </div>
         </Container>
     )
