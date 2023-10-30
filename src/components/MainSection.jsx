@@ -15,14 +15,13 @@ export default function MainSection() {
                 <div>
                     <h1 className='text-xl font-TitleFont md:text-4xl'> {t.mainTitle} 👋</h1>
                     <ul className='my-10 md:my-20 font-TitleFont md:text-2xl'>
-                        <li> {t.mainList1} </li>
+                        {/* <li> {t.mainList1} </li> */}
                         <li> {t.mainList2} </li>
                         <li> {t.mainList3} </li>
                     </ul>
-                    <p className='text-lg md:text-2xl'> {t.mainP}</p>
+                    <p className='text-lg md:text-2xl'> {t.mainP} </p>
                 </div>
                 <Image src='MainImage.svg' height={400} width={400} />
-
             </div>
         </Container>
     )

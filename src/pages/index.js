@@ -13,8 +13,9 @@ export default function Home() {
       <Head>
         <title>Portfolio</title>
         <meta name="description" content="Portfolio web developer" />
+        <meta name="keywords" content="HTML, CSS, JavaScript, NextJS, Wordpress, Divi" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" />
+        <link rel="icon" href="/favicon.svg"/>
       </Head>
         <main className='scroll-smooth max-h-screen overflow-y-scroll scrollbar-thin scrollbar-thumb-blue'>
           <NavBar/>
